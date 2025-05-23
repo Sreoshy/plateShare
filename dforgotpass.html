@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - Dine & PlateShare</title>
+    <link rel="stylesheet" href="dforgotstyle.css">
+    <link rel="stylesheet" href="forgot-password.css">
+</head>
+<body class="forgot-password-body">
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="logores.png" alt="Restaurant Logo">
+                <h1>Dine & PlateShare</h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#featured-menu" class="nav-link">Featured Menu</a></li>
+                    <li class="nav-item"><a href="#donation" class="nav-link">Donation</a></li>
+                    <li class="nav-item"><a href="#restaurant-info" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+     
+    <section id="forgot-password" class="container forgot-section">
+        <div class="forgot-password-form">
+            <h2>Forgot Your Password?</h2>
+            <p class="form-description">Enter your registered email address to receive a 6-digit verification code.</p>
+            <form id="forgotPasswordFormEmail">
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="button primary-button">Send Code</button>
+            </form>
+
+            <div id="verificationSection" style="display: none;">
+                <h2>Verify Code</h2>
+                <p class="form-description">Please enter the 6-digit code sent to your email address.</p>
+                <form id="verifyCodeForm">
+                    <div class="form-group">
+                        <label for="verificationCode">Verification Code:</label>
+                        <input type="text" id="verificationCode" name="verificationCode" pattern="[0-9]{6}" required>
+                    </div>
+                    <button type="submit" class="button primary-button">Verify Code</button>
+                </form>
+            </div>
+
+            <button id="resetPasswordButton" class="button primary-button" style="display: none;">Reset Password</button>
+
+            <p class="login-link"><a href="donor-login.html">Back to Login</a></p>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 "Dine & PlateShare"-All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const forgotPasswordFormEmail = document.getElementById('forgotPasswordFormEmail');
+        const verificationSection = document.getElementById('verificationSection');
+        const verifyCodeForm = document.getElementById('verifyCodeForm');
+        const resetPasswordButton = document.getElementById('resetPasswordButton');
+        let generatedCode;
+
+        forgotPasswordFormEmail.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+
+            
+            generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
+            console.log('Generated Code:', generatedCode); 
+            alert(`A 6-digit code has been sent to ${email}. (Simulated: ${generatedCode})`);
+            forgotPasswordFormEmail.style.display = 'none';
+            verificationSection.style.display = 'block';
+        });
+
+        verifyCodeForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const enteredCode = document.getElementById('verificationCode').value;
+
+            if (enteredCode === generatedCode) {
+                alert('Verification successful!');
+                verificationSection.style.display = 'none';
+                resetPasswordButton.style.display = 'block';
+            } else {
+                alert('Verification code is incorrect. Please try again.');
+            }
+        });
+
+        resetPasswordButton.addEventListener('click', function() {
+            alert('You can now proceed to reset your password (this would typically lead to a password reset page).');
+            
+        });
+    </script>
+</body>
+</html>

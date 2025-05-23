@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password - Dine & PlateShare</title>
+    <link rel="stylesheet" href="dresetstyle.css">
+    <link rel="stylesheet" href="reset-password.css">
+</head>
+<body class="reset-password-body">
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="logores.png" alt="Restaurant Logo">
+                <h1>Dine & PlateShare</h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#featured-menu" class="nav-link">Featured Menu</a></li>
+                    <li class="nav-item"><a href="#donation" class="nav-link">Donation</a></li>
+                    <li class="nav-item"><a href="#restaurant-info" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="reset-password-page" class="container reset-section">
+        <div class="reset-password-form">
+            <h2>Reset Password</h2>
+            <p class="form-description">Enter your new 6-digit password and confirm it.</p>
+            <form id="resetPasswordForm">
+                <div class="form-group">
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" required pattern="[0-9]{6}" title="Password must be a 6-digit number">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm New Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="button primary-button">Reset Password</button>
+            </form>
+            <p id="passwordMatchError" style="display:none; color: red;">Passwords do not match. Please try again.</p>
+            <p id="passwordResetSuccess" style="display:none; color: green;">Password reset successful! You can now <a href="donor-login.html">log in</a> with your new password.</p>
+            <p class="login-link"><a href="donor-login.html">Back to Login</a></p>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 "Dine & PlateShare"-All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('resetPasswordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const passwordMatchError = document.getElementById('passwordMatchError');
+            const passwordResetSuccess = document.getElementById('passwordResetSuccess');
+
+            if (newPassword === confirmPassword) {
+                if (newPassword.length === 6 && /^[0-9]+$/.test(newPassword)) {
+                    
+                    passwordResetSuccess.style.display = 'block';
+                    passwordMatchError.style.display = 'none';
+                    document.getElementById('resetPasswordForm').style.display = 'none'; 
+                } else {
+                    alert('Password must be a 6-digit number.'); 
+                }
+            } else {
+                passwordMatchError.style.display = 'block';
+                passwordResetSuccess.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

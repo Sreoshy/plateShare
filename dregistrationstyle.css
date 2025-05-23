@@ -1,0 +1,301 @@
+ /* Donor Registration Page Styles */
+
+/* Root variables for theme consistency */
+:root {
+    --primary-black: #272626;
+    --secondary-biscuit: #c9be9e;
+    --accent-color: #a28566;
+    --font-family-base: 'Arial', sans-serif;
+    --font-family-headings: 'Arial', sans-serif;
+    --max-width: 1200px;
+    --padding-section: 60px 20px;
+}
+
+/* Basic reset for consistent styling */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles specific to the donor registration page */
+body.donor-register-body {
+    background-color: #c5b586; /* Background color from the provided CSS */
+    color: var(--primary-black); /* Text color for the body content */
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+/* Header styles - kept consistent with previous examples */
+.header {
+    background-color: var(--primary-black);
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+    width: 100%; /* Make header full width */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+    margin-right: 15px;
+}
+
+.logo h1 {
+    color: var(--secondary-biscuit);
+    font-size: 2.2rem;
+    margin: 0;
+    font-family: var(--font-family-headings);
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--secondary-biscuit);
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Registration section styling */
+.register-section {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 130px); /* Adjusted min-height based on header/footer */
+    width: 100%; /* Ensure section takes full width for centering */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Styling for the registration form container */
+.register-form {
+    background-color: var(--secondary-biscuit);
+    color: var(--primary-black);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Form heading styling */
+.register-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* Form description text */
+.form-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Styling for individual form groups (label + input) */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Styling for text, email, password, and select inputs */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"], /* Added tel input */
+.form-group select { /* Added select input */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    color: var(--primary-black);
+    background-color: #fff; /* Ensure background is white */
+}
+
+/* Styling for the submit button */
+.register-form button[type="submit"] {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--secondary-biscuit);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.register-form button[type="submit"]:hover {
+    background-color: #856a4e;
+}
+
+/* Styling for the coupon message area */
+.coupon-message {
+    background-color: #f9f9f9;
+    color: var(--accent-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.coupon-message h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Styling for the generated coupon code */
+.coupon-code {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-black);
+}
+
+/* Styling for the login link */
+.login-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.login-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles - kept consistent with previous examples */
+.site-footer {
+    background-color: var(--primary-black);
+    color: var(--secondary-biscuit);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px solid #333;
+    width: 100%; /* Ensure footer is full width */
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments for various screen sizes */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .nav-item {
+        margin: 8px 0;
+    }
+    .logo h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    .register-section {
+        min-height: calc(100vh - 150px); /* Adjust min-height for smaller header */
+    }
+}
+
+@media (max-width: 576px) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    .logo img {
+        height: 35px;
+        margin-right: 10px;
+    }
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+    .register-form {
+        padding: 30px;
+        border-radius: 20px;
+    }
+    .register-form h2 {
+        font-size: 1.6rem;
+    }
+    .form-description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        font-size: 0.95rem;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group input[type="tel"],
+    .form-group select {
+        padding: 8px;
+        font-size: 0.95rem;
+    }
+    .register-form button[type="submit"] {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,75 @@
+//DONOR LOGIN HTML                                                                                                                                                                                                                                                          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Login - Dine & PlateShare</title>
+    <link rel="stylesheet" href="dloginstyle.css">
+    <link rel="stylesheet" href="donor-login.css">
+</head>
+<body class="donor-login-body">
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="logores.png" alt="Restaurant Logo">
+                <h1>Dine & PlateShare</h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#featured-menu" class="nav-link">Featured Menu</a></li>
+                    <li class="nav-item"><a href="#donation" class="nav-link">Donation</a></li>
+                    <li class="nav-item"><a href="#restaurant-info" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="donor-login" class="container login-section">
+        <div class="login-form">
+            <h2>Donor Login</h2>
+            <p class="form-description">Log in with your registered email and password.</p>
+            <form id="donorLoginForm">
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-options">
+                    <button type="submit" class="button primary-button">Login</button>
+                    <a href="#forgot-password" class="forgot-password">Forgot Password?</a>
+                </div>
+            </form>
+            <p class="register-link">Not a donor yet? <a href="donor-register.html">Register here</a></p>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 "Dine & PlateShare"-All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('donorLoginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+    
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            
+            const storedEmail = localStorage.getItem('donorEmail');
+            const storedPassword = localStorage.getItem('donorPassword');
+    
+            if (email === storedEmail && password === storedPassword) {
+                alert('Login successful!');
+                
+                
+            } else {
+                alert('Login failed. Please check your email and password.');
+            }
+        });
+    </script>
+    
+</body>
+</html>

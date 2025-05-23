@@ -1,0 +1,449 @@
+ /* style.css */
+
+:root {
+    --primary-black: #272626;
+    --secondary-biscuit: #c5b586;
+    --accent-color: #a28566;
+    --font-family-base: 'Arial', sans-serif;
+    --font-family-headings: 'Arial', sans-serif;
+    --max-width: 1200px;
+    --padding-section: 60px 20px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-black);
+    color: var(--secondary-biscuit);
+    font-family: var(--font-family-base); /* Using the base font defined in :root */
+    line-height: 1.6; /* Improved readability */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+.header {
+    background-color: var(--primary-black);
+    border-bottom: 1px solid #333;
+    padding: 15px 0; /* Increased padding */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    padding: 0 20px;
+    margin: 0 auto; /* Center the header content */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px; /* Slightly adjusted logo size */
+    margin-right: 15px;
+}
+
+.logo h1 {
+    color: var(--secondary-biscuit);
+    font-size: 2.2rem; /* Slightly adjusted font size */
+    margin: 0;
+    font-family: var(--font-family-headings); /* Using heading font */
+}
+
+/* Navigation styles */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--secondary-biscuit);
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    background-color: rgba(0, 0, 0, 0.2); /* Subtle hover background */
+}
+
+#hero {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+}
+
+.hero-slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 1;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Added to prevent extra space below image */
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--secondary-biscuit);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1000px;
+    height: auto; /* Adjusted for better responsiveness */
+}
+
+#hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero-tagline {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+#why-choose-us {
+    padding: var(--padding-section);
+    text-align: center;
+}
+
+#why-choose-us h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.why-choose-item {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.why-choose-item i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.why-choose-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.why-choose-item p {
+    color: #555;
+}
+
+#featured-menu {
+    padding: var(--padding-section);
+    text-align: center;
+    background-color:var(--secondary-biscuit);
+}
+
+#featured-menu h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.featured-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.featured-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.featured-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.item-description {
+    color: #777;
+    margin-bottom: 15px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Added vendor prefix */
+    line-clamp: 2; /* Added standard property */
+}
+
+.item-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.view-menu-button {
+    margin-top: 30px;
+}
+
+#donation {
+    padding: var(--padding-section);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.donation-content {
+    flex: 1;
+}
+
+.donation-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.donation-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block; /* Added to prevent extra space below image */
+}
+
+#donation h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.donation-content p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.donation-buttons .button {
+    margin-right: 15px;
+}
+
+#testimonials {
+    padding: var(--padding-section);
+    text-align: center;
+    background-color: var(--accent-color);
+    color: var(--primary-black);
+}
+
+#testimonials h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.testimonial {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 400px;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.customer-name {
+    font-weight: bold;
+    text-align: right;
+    color: var(--primary-black);
+}
+
+#restaurant-info {
+    padding: var(--padding-section);
+    text-align: center;
+}
+
+#restaurant-info h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.restaurant-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-item {
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    display: block;
+    text-align: center;
+}
+
+.info-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.info-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--primary-black);
+    color: var(--secondary-biscuit);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+    #hero {
+        height: auto;
+    }
+
+    .hero-content {
+        position: relative;
+        transform: none;
+        top: auto;
+        left: auto;
+        padding: 30px;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons .button {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+
+    #donation {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .donation-image {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .testimonial {
+        min-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    #why-choose-us,
+    #featured-menu,
+    #donation,
+    #testimonials,
+    #restaurant-info {
+        padding: 40px 15px;
+    }
+
+    .testimonial {
+        min-width: 100%;
+    }
+}
